@@ -51,5 +51,19 @@ namespace AddressBookTest
                 i++;
             }
         }
+        [TestMethod]
+        public void GivenQueryForStateName_InGetContactsMethod_ReturnListOfContactsOfStates()
+        {
+            int expectedCount = 4;
+            List<Contacts> listOfContactsForParticularState = addressBookDataBase.GetContactsListByDataAdapterFromDB(stateCountQuery);
+            Assert.AreEqual(expectedCount, listOfContactsForParticularState.Count);
+        }
+        [TestMethod]
+        public void GivenQueryForCityName_InGetContactsMethod_ReturnListOfContactsOfCities()
+        {
+            int expectedCount = 2;
+            List<Contacts> listOfContactsForParticularCity = addressBookDataBase.GetContactsListByDataAdapterFromDB(cityCountQuery);
+            Assert.AreEqual(expectedCount, listOfContactsForParticularCity.Count);
+        }
     }
 }
