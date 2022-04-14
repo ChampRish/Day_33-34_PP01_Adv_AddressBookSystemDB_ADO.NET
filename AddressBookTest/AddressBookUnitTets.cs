@@ -1,33 +1,55 @@
-﻿using AddressBook_ADO.NET;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Address_Book_2;
+using System.Collections.Generic;
 
 namespace AddressBookTest
 {
     [TestClass]
     public class AddressBookUnitTets
     {
-        [TestMethod]
-        public void TestMethod1()
-
-
-            public static string masterQuery = @"SELECT * FROM PersonContactsTable";
+        public static string masterQuery = @"SELECT * FROM PersonContactsTable";
+        public static string dateQuery = @"SELECT * FROM PersonContactsTable WHERE Date_Added BETWEEN CAST('2020-05-10' AS DATE) AND GETDATE()";
         AddressBookDataBase addressBookDataBase = new AddressBookDataBase();
         [TestMethod]
         public void GivenDBConnectionString_InAddressBookDataBase_ReturnListOfContactsinDB()
         {
-            addressBookDataBase.GetContactDetailsByDataAdapter(masterQuery);
-            Assert.IsTrue(true);
+            string[] expectedNamesinDB = { "Rishabh", "Lala", "Mohit", "Satty", "BUNNY" };
+            string[] namesRetrived = { "", "", "", "", "" };
+            List<Contacts> checkingContacts = addressBookDataBase.GetContactsListByDataAdapterFromDB(masterQuery);
+            int i = 0;
+            foreach (Contacts contact in checkingContacts)
+            {
+                namesRetrived[i] = contact.firstName;
+                Assert.AreEqual(namesRetrived[i], expectedNamesinDB[i]);
+                i++;
+            }
         }
 
         [TestMethod]
-        public void GivenContactsUpdatedObject_InUpdateContactsMethod_Return()
+        public void GivenContactsUpdatedObject_InUpdateContactsMethod_ReturnListOfUpdatedContact()
         {
-            Contacts contacts = new Contacts { firstName = "VINEY", lastName = "KHANEJA", city = "Ludhiana", state = "Punjab", zipCode = 110008 };
-            var actual = addressBookDataBase.UpdateContactDetailsofAPerson(contacts);
-            Assert.AreEqual("Punjab", actual.state);
+            Contacts contacts = new Contacts { firstName = "Rishabh", lastName = "Pal", city = "Agra", state = "U.P", zipCode = 124113 };
+            addressBookDataBase.UpdateContactDetailsofAPerson(contacts);
+            List<Contacts> updatedListOfContacts = addressBookDataBase.GetContactsListByDataAdapterFromDB(masterQuery);
+            foreach (Contacts contact in updatedListOfContacts)
+            {
+                if (contact.firstName == contacts.firstName && contact.lastName == contacts.lastName)
+                {
+                    Assert.AreEqual(contacts.city, contact.city);
+                }
+            }
         }
-
-    
-    
+        [TestMethod]
+        public void GivenQueryForDateRange_InGetContactsMethod_ReturnListOfContactsBetweenParticularDates()
+        {
+            string[] expectedContactsPersonNames = { "Satty", "Lala", "BUNNY" };
+            List<Contacts> listOfContactsForParticularDateRange = addressBookDataBase.GetContactsListByDataAdapterFromDB(dateQuery);
+            int i = 0;
+            foreach (Contacts contact in listOfContactsForParticularDateRange)
+            {
+                Assert.AreEqual(expectedContactsPersonNames[i], contact.firstName);
+                i++;
+            }
+        }
+    }
 }
