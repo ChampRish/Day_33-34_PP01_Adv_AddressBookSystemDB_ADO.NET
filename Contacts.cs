@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AddressBook_ADO.NET
 {
-    public class Contacts
+    internal class Contacts
     {
+        #region Contacts Fields
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string address { get; set; }
@@ -16,28 +17,30 @@ namespace AddressBook_ADO.NET
         public int zipCode { get; set; }
         public int phoneNo { get; set; }
         public string email { get; set; }
+        #endregion
 
-        public Contacts AddContacts()
+        #region Adding Contacts from Console & returning Object
+        public static Contacts AddContacts()
         {
             Contacts contacts = new Contacts();
-            Console.WriteLine("Enter First Name: ");
+            Console.Write("Enter First Name: ");
             contacts.firstName = Console.ReadLine();
-            Console.WriteLine("Enter Last Name: ");
+            Console.Write("Enter Last Name: ");
             contacts.lastName = Console.ReadLine();
-            Console.WriteLine("Enter the address: ");
+            Console.Write("Enter the address: ");
             contacts.address = Console.ReadLine();
-            Console.WriteLine("Enter city Name: ");
+            Console.Write("Enter city Name: ");
             contacts.city = Console.ReadLine();
-            Console.WriteLine("Enter state Name: ");
+            Console.Write("Enter state Name: ");
             contacts.state = Console.ReadLine();
-            Console.WriteLine("Enter the zip Code: ");
+            Console.Write("Enter the zip Code: ");
             contacts.zipCode = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the phone Number: ");
+            Console.Write("Enter the phone Number: ");
             contacts.phoneNo = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the email Id: ");
+            Console.Write("Enter the email Id: ");
             contacts.email = Console.ReadLine();
             return contacts;
         }
-
+        #endregion
     }
 }
