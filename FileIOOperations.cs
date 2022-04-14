@@ -9,11 +9,7 @@ namespace AddressBook_ADO.NET
 {
     internal class FileIOOperations
     {
-        #region FilePath to and from which File to be Write & Read
         public static string path = @"E:\c# git push\AddressBook_ADO.NET\AddressBook_ADO.NET\Utility\Address.txt";
-        #endregion
-
-        #region Writing Person Details in AddressBook.txt File
         public static void WritingAllPersonContactsinFile(IDictionary<string, Book> addressBook)
         {
             File.WriteAllText(path, string.Empty);
@@ -28,15 +24,11 @@ namespace AddressBook_ADO.NET
             }
             Console.WriteLine("Content has written to AdrressBook.txt file");
         }
-        #endregion
-
-        #region Reading File from AddressBook.txt file
         public static void ReadingAllPersonContactsinFile()
         {
             string lines = File.ReadAllText(path);
             Console.WriteLine("Reading files from AdrressBook.txt file");
             Console.WriteLine(lines);
         }
-        #endregion
     }
 }
