@@ -1,9 +1,34 @@
-Address Book Name : Rishabh
+Address Book Name : College Students
 firstName : Rishabh
-lastName : 
-address : 
-city : 
-state : 
-zipCode : 5
-phoneNo : 5
-email : 5
+lastName : Gupta
+address : 75/4
+city : Agra
+state : U.P
+zipCode : 157841
+phoneNo : 7906552015
+email : gguptarishabh82@gmail.com
+firstName : verrendra
+lastName : Gupta
+address : 75
+city : Agra
+state : U.P
+zipCode : 569712
+phoneNo : 7906552015
+email : rishabh43.com
+Address Book Name : Working Professionals
+firstName : Satty
+lastName : Chauhan
+address : 45/21
+city : Mathura
+state : Uttar Pradesh
+zipCode : 195120
+phoneNo : 9627974345
+email : satty@gmail.com
+firstName : Virrey
+lastName : kumar
+address : 458/2
+city : Noida
+state : U.P
+zipCode : 456321
+phoneNo : 9837694080
+email : virendrakumar@gmail.com

@@ -14,6 +14,8 @@ namespace AddressBook_ADO.NET
             AddressBook addressBook = new AddressBook();
             addressBook.AddContactsDetailinAddressBook();
             FileIOOperations.ReadingAllPersonContactsinFile();
+            FileIOOperations.ReadingAllPersonContactsfromCSVFile();
+            //addressBook.SortContactPerson();
             //addressBook.DisplayContactsInAddressBookDictionary();
             //addressBook.SeachingPersonByCityNameAndCountingAlso();
             //addressBook.SeachingPersonByStateNameAndCountingAlso();
