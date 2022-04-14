@@ -1,6 +1,6 @@
 USE [Address_Book_Service]
 GO
-/****** Object:  StoredProcedure [dbo].[spUpdateContacts]    Script Date: 14-Apr-22 8:44:48 PM ******/
+/****** Object:  StoredProcedure [dbo].[spUpdateContacts]  Script Date: 14-Apr-22 8:44:48 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

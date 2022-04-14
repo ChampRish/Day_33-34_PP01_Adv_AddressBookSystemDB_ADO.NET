@@ -187,7 +187,7 @@ CREATE PROCEDURE spUpdateContacts
 )
 AS
 BEGIN TRY
-UPDATE PersonContactsTable SET City = @City WHERE FirstName = @FirstName AND LastName = @LastName
+UPDATE PersonContactsTable SET City= @City WHERE FirstName = @FirstName AND LastName = @LastName
 UPDATE PersonContactsTable SET StateName = @State WHERE FirstName = @FirstName AND LastName = @LastName
 UPDATE PersonContactsTable SET Zip = @Zip WHERE FirstName = @FirstName AND LastName = @LastName
 END TRY
