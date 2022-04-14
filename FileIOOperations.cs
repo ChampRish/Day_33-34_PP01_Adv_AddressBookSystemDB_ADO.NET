@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using CsvHelper;
-using System.Threading.Tasks;
 using System.IO;
-using System.Linq;
+using CsvHelper;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AddressBook_ADO.NET
 {
@@ -13,6 +13,7 @@ namespace AddressBook_ADO.NET
         #region FilePath to and from which File to be Write & Read
         public static string path = @"E:\c# git push\AddressBook_ADO.NET\AddressBook_ADO.NET\Utility\Address.txt";
         public static string csvPath = @"E:\c# git push\AddressBook_ADO.NET\AddressBook_ADO.NET\Utility\AddressBook.csv";
+        public static string jsonPath = @"E:\c# git push\AddressBook_ADO.NET\AddressBook_ADO.NET\Utility\AddressBook.json";
         #endregion
 
         #region Writing Person Details in AddressBook.txt File
@@ -21,11 +22,13 @@ namespace AddressBook_ADO.NET
             File.WriteAllText(path, string.Empty);
             foreach (KeyValuePair<string, Book> book in addressBook)
             {
-                File.AppendAllText(path, $"Address Book Name : {book.Key}\n");
+                File.AppendAllText(path, $"Address Book Name : {book.Key} {Environment.NewLine}");
                 foreach (Contacts contacts in book.Value.listOfContacts)
                 {
                     File.AppendAllText(path, contacts.ToString());
+                    File.AppendAllText(path, Environment.NewLine);
                 }
+                File.AppendAllText(path, Environment.NewLine);
             }
             Console.WriteLine("Content has written to AdrressBook.txt file");
         }
@@ -71,6 +74,41 @@ namespace AddressBook_ADO.NET
                 foreach (Contacts contact in records)
                 {
                     Console.WriteLine(contact.ToString());
+                }
+            }
+        }
+        #endregion
+
+        #region Writing to AddressBook.json File
+        public static void WritigAllPersonContactsinJsonFile(IDictionary<string, Book> addressBook)
+        {
+            File.WriteAllText(jsonPath, string.Empty);
+            foreach (var book in addressBook)
+            {
+                JsonSerializer jsonSerializer = new JsonSerializer();
+                var stream = File.Open(jsonPath, FileMode.Append);
+                var streamwriter = new StreamWriter(stream);
+                var jsonwriter = new JsonTextWriter(streamwriter);
+                foreach (Contacts contact in book.Value.listOfContacts)
+                {
+                    jsonSerializer.Serialize(jsonwriter, contact);
+                }
+                jsonwriter.Close();
+                streamwriter.Close();
+            }
+        }
+        #endregion
+
+        #region For reading from json File
+        public static void ReadingAllPersonContactsFromJsonFile()
+        {
+            using (StreamReader streamreader = new StreamReader(jsonPath))
+            {
+                string json = streamreader.ReadToEnd();
+                dynamic jsonarray = JsonConvert.DeserializeObject(json);
+                foreach (Contacts contacts in jsonarray)
+                {
+                    Console.WriteLine(contacts.ToString());
                 }
             }
         }

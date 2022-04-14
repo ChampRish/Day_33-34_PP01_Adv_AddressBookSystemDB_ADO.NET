@@ -18,6 +18,7 @@ namespace AddressBook_ADO.NET
             multipleAddressBook.Add(addressBookName, book);
             FileIOOperations.WritingAllPersonContactsinFile(multipleAddressBook);
             FileIOOperations.WritigAllPersonContactsinCSVFile(multipleAddressBook);
+            FileIOOperations.WritigAllPersonContactsinJsonFile(multipleAddressBook);
         }
         #endregion
 

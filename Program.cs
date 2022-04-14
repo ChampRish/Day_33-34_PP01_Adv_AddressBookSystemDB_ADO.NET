@@ -15,11 +15,11 @@ namespace AddressBook_ADO.NET
             addressBook.AddContactsDetailinAddressBook();
             FileIOOperations.ReadingAllPersonContactsinFile();
             FileIOOperations.ReadingAllPersonContactsfromCSVFile();
+            //FileIOOperations.ReadingAllPersonContactsFromJsonFile();
             //addressBook.SortContactPerson();
             //addressBook.DisplayContactsInAddressBookDictionary();
             //addressBook.SeachingPersonByCityNameAndCountingAlso();
             //addressBook.SeachingPersonByStateNameAndCountingAlso();
-
         }
     }
 }

@@ -1,0 +1,40 @@
+{
+  "firstName": "Rishabh",
+  "lastName": "Gupta",
+  "address": "75/4",
+  "city": "Agra",
+  "state": "U.P",
+  "zipCode": 124113,
+  "phoneNo": 7906552015,
+  "email": "gguptarishabh82@gmail.com"
+} 
+{
+  "firstName": "rahul",
+  "lastName": "Arora",
+  "address": "75/2",
+  "city": "Mathura",
+  "state": "U.P",
+  "zipCode": 124001,
+  "phoneNo": 9627974345,
+  "email": "yash.arora@111.com"
+}
+{
+  "firstName": "Ankur",
+  "lastName": "Merothiya",
+  "address": "484",
+  "city": "firojabad",
+  "state": "U.P",
+  "zipCode": 124563,
+  "phoneNo": 9545121545,
+  "email": "Ank@gmail.com"
+} 
+{
+  "firstName": "Rajat",
+  "lastName": "Gupta",
+  "address": "42",
+  "city": "Kanpur",
+  "state": "U.P",
+  "zipCode": 456897,
+  "phoneNo": 7520145687
+  "email": "Rajex@gmail.com"
+}
