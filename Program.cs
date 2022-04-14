@@ -13,9 +13,10 @@ namespace AddressBook_ADO.NET
             Console.WriteLine("Welcome to Address Book Program");
             AddressBook addressBook = new AddressBook();
             addressBook.AddContactsDetailinAddressBook();
-            addressBook.DisplayContactsInAddressBookDictionary();
-            addressBook.SeachingPersonByCityNameAndCountingAlso();
-            addressBook.SeachingPersonByStateNameAndCountingAlso();
+            addressBook.SortContactPerson();
+            //addressBook.DisplayContactsInAddressBookDictionary();
+            //addressBook.SeachingPersonByCityNameAndCountingAlso();
+            //addressBook.SeachingPersonByStateNameAndCountingAlso();
 
         }
     }
