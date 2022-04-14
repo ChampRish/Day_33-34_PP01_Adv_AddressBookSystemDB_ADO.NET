@@ -14,8 +14,8 @@ namespace AddressBook_ADO.NET
             AddressBook addressBook = new AddressBook();
             addressBook.AddContactsDetailinAddressBook();
             addressBook.DisplayContactsInAddressBookDictionary();
-            addressBook.SeachingPersonByCityName();
-            addressBook.SeachingPersonByStateName();
+            addressBook.SeachingPersonByCityNameAndCountingAlso();
+            addressBook.SeachingPersonByStateNameAndCountingAlso();
 
         }
     }
