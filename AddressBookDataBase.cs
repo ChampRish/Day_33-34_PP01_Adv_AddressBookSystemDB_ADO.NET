@@ -8,7 +8,7 @@ namespace AddressBook_ADO.NET
     public class AddressBookDataBase
     {
         #region DB Connection String
-        public static string connectionString = @"Server=LAPTOP-IUMGL5A5;Database=Address_Book_Service;User ID=LAPTOP-IUMGL5A5\Kashish Manchanda;Trusted_Connection=True";
+        public static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Address_Book_Service;Integrated Security=True";
         #endregion
 
         #region Get All the Contacts From Database to Console
