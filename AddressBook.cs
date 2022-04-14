@@ -71,7 +71,7 @@ namespace AddressBook_ADO.NET
         }
         #endregion
 
-        #region For Searching Person in a particular city across Multiple AddressBook
+        #region For Viewing Person in a city or State across Multiple AddressBook
         public void SeachingPersonByCityName()
         {
             Console.WriteLine("Enter the City name: ");
